@@ -47,7 +47,6 @@ end test_entity;
 
 
 
-
 architecture Behavioral of test_entity is
 
   constant SINE_LUT : sine_lut_t := gen_sine_lut;

@@ -208,9 +208,10 @@ export class VHDLUtils {
                     idx = 1;
                     this.name = text[idx];
 
+                    idx += 1;
                     // ist there an "is" after Entity name?
-                    if (text[idx+1].toLowerCase().match("is")){
-                        idx += 2;
+                    if (text[idx].toLowerCase() === "is"){
+                        idx += 1;
                     }
                 
                 case "find_opening":
@@ -590,7 +591,7 @@ export class VHDLUtils {
         let rep = 0;
         let vhdText = "";
         let name;
-        vhdText += this.name + "_i : " + this.name + LINE_END;
+        vhdText += "i_" + this.name + " : " + this.name + LINE_END;
 
         if (this.vhdGenericLines.length > 0){
             maxlen = this._getMaxLength(this.vhdGenericLines);
