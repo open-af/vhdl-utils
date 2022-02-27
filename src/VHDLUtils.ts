@@ -528,32 +528,33 @@ export class VHDLUtils {
         let name;
         vhdText += "component " + this.name + " is"+ LINE_END;
 
-        if (this.vhdGenericLines.length > 0){
-            maxlen = this._getMaxLength(this.vhdGenericLines);
+        // Skip Generics for component
+        // if (this.vhdGenericLines.length > 0){
+        //     maxlen = this._getMaxLength(this.vhdGenericLines);
         
-            for(let idx = 0; idx < this.vhdGenericLines.length; idx++){
-                if (idx === 0){
-                    vhdText += this.indent1 + "generic(" + LINE_END;
-                }
+        //     for(let idx = 0; idx < this.vhdGenericLines.length; idx++){
+        //         if (idx === 0){
+        //             vhdText += this.indent1 + "generic(" + LINE_END;
+        //         }
 
-                // Name may be undefined
-                name = this.vhdGenericLines[idx].name;
-                if (name !== undefined){
-                    rep = maxlen - name.length;
-                }
-                vhdText += this.indent2 + this.vhdGenericLines[idx].name + " ".repeat(rep) + " : " + this.vhdGenericLines[idx].type;
+        //         // Name may be undefined
+        //         name = this.vhdGenericLines[idx].name;
+        //         if (name !== undefined){
+        //             rep = maxlen - name.length;
+        //         }
+        //         vhdText += this.indent2 + this.vhdGenericLines[idx].name + " ".repeat(rep) + " : " + this.vhdGenericLines[idx].type;
 
-                if(this.vhdGenericLines[idx].val){
-                    vhdText += " := " + this.vhdGenericLines[idx].val;
-                }
+        //         if(this.vhdGenericLines[idx].val){
+        //             vhdText += " := " + this.vhdGenericLines[idx].val;
+        //         }
 
-                if( idx < this.vhdGenericLines.length-1){
-                    vhdText += ";" + LINE_END;
-                }else{
-                    vhdText += LINE_END + this.indent1 + ");" + LINE_END;
-                }
-            }
-        }
+        //         if( idx < this.vhdGenericLines.length-1){
+        //             vhdText += ";" + LINE_END;
+        //         }else{
+        //             vhdText += LINE_END + this.indent1 + ");" + LINE_END;
+        //         }
+        //     }
+        // }
         
         if (this.vhdPortLines.length > 0){
             maxlen = this._getMaxLength(this.vhdPortLines);
