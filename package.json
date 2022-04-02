@@ -2,7 +2,7 @@
 	"name": "vhdl-utils",
 	"displayName": "VHDL-Utils",
 	"description": "Collection of some useful tools for vhdl development.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "open-af-vscode-ext",
 	"repository": {
 		"type": "git",
