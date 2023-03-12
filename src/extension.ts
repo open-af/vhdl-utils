@@ -18,32 +18,15 @@ export function activate(context: vscode.ExtensionContext) {
 			});
 		}
 	}
-
-	var INDENT_STR = "";
-	const activeEditor = vscode.window.activeTextEditor;
-	if (activeEditor) {
-		if (activeEditor.options.insertSpaces){
-			INDENT_STR = "";				
-			if ( typeof activeEditor.options.tabSize === 'number'){
-				for (let iter = activeEditor.options.tabSize; iter > 0; iter--){
-					INDENT_STR += " ";
-				}
-			} else {
-				INDENT_STR = "  ";
-			}
-		} else {
-			INDENT_STR = '\t';
-		}
-	}
-
+	
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portCopy', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portCopy", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portCopy");
 		vscode.window.showInformationMessage("VHDLUtils portCopy");
 		vhdlutils.copyPorts();
 	});
 	
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portPasteAsInstance', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsInstance", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsInstance");
 		var vhdText = "";
 
 		vscode.env.clipboard.readText().then(
@@ -57,7 +40,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portPasteAsComponent', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsComponent", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsComponent");
 		var vhdText = "";
 
 		vscode.env.clipboard.readText().then(
@@ -72,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portPasteAsEntity', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsEntity", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteAsEntity");
 		var vhdText = "";
 		vscode.env.clipboard.readText().then(
 			(text)=>{
@@ -83,7 +66,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portPasteSignals', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteSignals", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteSignals");
 		var vhdText = "";
 		vscode.env.clipboard.readText().then(
 			(text)=>{
@@ -93,7 +76,7 @@ export function activate(context: vscode.ExtensionContext) {
 		);
 	});
 	var disposable = vscode.commands.registerCommand('VHDLUtils.portPasteConstants', () => {
-		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteConstants", INDENT_STR);
+		const vhdlutils = new VHDLUtils.VHDLUtils("portPasteConstants");
 		var vhdText = "";
 		vscode.env.clipboard.readText().then(
 			(text)=>{

@@ -2,7 +2,7 @@
 	"name": "vhdl-utils",
 	"displayName": "VHDL-Utils",
 	"description": "Collection of some useful tools for vhdl development.",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "open-af-vscode-ext",
 	"repository": {
 		"type": "git",
@@ -15,10 +15,6 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:VHDLUtils.portPasteAsComponent",
-		"onCommand:VHDLUtils.portPasteAsInstance",
-		"onCommand:VHDLUtils.portPasteAsEntity",
-		"onCommand:VHDLUtils.portCopy"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -58,16 +54,16 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.63.0",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.0.0",
-		"@types/node": "14.x",
+		"@types/node": "^14.18.37",
+		"@types/vscode": "^1.63.0",
 		"@typescript-eslint/eslint-plugin": "^5.9.1",
 		"@typescript-eslint/parser": "^5.9.1",
+		"@vscode/test-electron": "^2.0.3",
 		"eslint": "^8.6.0",
 		"glob": "^7.2.0",
 		"mocha": "^9.1.3",
-		"typescript": "^4.5.4",
-		"@vscode/test-electron": "^2.0.3"
+		"typescript": "^4.5.4"
 	}
 }

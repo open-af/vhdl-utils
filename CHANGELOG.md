@@ -2,8 +2,9 @@
 
 All notable changes to the "vhdl-utils" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [Added]
+- Added support for buffer ports
 
-## [Unreleased]
-
-- Initial release
+## [Fixed]
+- Fixed some indentation related bugs.
+- Reworked the parsing mechanism.
